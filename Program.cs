@@ -9,22 +9,31 @@ namespace GuessingGame
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Think of a number between 1 and 100. I will try to guess it. AND I ALWAYS WIN!");
-            Console.WriteLine("Enter either h, for higher, l for less, and e, for even.");
-            Console.WriteLine("First Guess:50");
+            int guess;
+            int a = 1;
+            int b = 100;
+            string input;
 
-            string input = Console.ReadLine();
-
-            
-
-            if (input == "e")
+            Console.WriteLine("Think of a number between 1 and 100, and I will guess it. HOWEVER, I ALWAYS WIIIN!!1!");
+            while (true)
             {
-                Console.WriteLine("I WIIIIIIIIIN!");
-            }
+                guess = (a + b) / 2;
+                Console.WriteLine("Is your number {0}", guess);
+                Console.WriteLine("h, l, or e");
+                input = Console.ReadLine();
+                if (input == "h")
+                {
+                    a = guess + 1;
+                }
+                if (input == "l")
+                {
+                    b = guess - 1;
+                }
+                if (input == "e")
+                {
+                    break;
+                }
 
-            if (input == "h")
-            {
-                Console.WriteLine("");
             }
         }
     }
