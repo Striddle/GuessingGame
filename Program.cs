@@ -17,7 +17,7 @@ namespace GuessingGame
 
             Console.WriteLine("Think of a number between 1 and 100, and I will guess it.");
             Console.WriteLine("AND I ALWAYS WIN");
-            while (GuessNumber != 7)
+            while (GuessNumber <= 7)
             {
                 guess = (x + y) / 2;
                 Console.WriteLine("Is your number {0}", guess);
@@ -33,11 +33,14 @@ namespace GuessingGame
                 }
                 if (input == "e")
                 {
-                    Console.WriteLine("HAHAHAHAHAHAHAHAHA I AM THE WINNAR! Type end to exit.");
+                    Console.WriteLine("HAHAHAHAHAHAHAHAHA I AM THE WINNAR! Type end to exit, or type 'reset' to reset.");
 
                     if (Console.ReadLine() == "end")
                         break;
+                    if (Console.ReadLine() == "reset")
+                        GuessNumber = 0;
                 }
+                GuessNumber++;
             }
         }
     }
